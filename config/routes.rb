@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :restaurants
 
   get '/homepage' => 'homepage#index'
+
+  root 'homepage#index'
 end
