@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'restaurant/new'
+
   resources :reviews
   resources :restaurants
 
