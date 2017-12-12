@@ -1,2 +1,4 @@
 class Review < ApplicationRecord
+  validates :rating, presence: true
+  validates_inclusion_of :rating, in: 1..5
 end
