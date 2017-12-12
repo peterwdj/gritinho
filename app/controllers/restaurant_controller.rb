@@ -4,6 +4,6 @@ class RestaurantController < ApplicationController
 
   def create
 	Restaurant.create(name: params[:name], description: params[:description])
-	redirect_to :controller => 'homepage', :action => 'index'
+	redirect_to '/'
   end
 end
