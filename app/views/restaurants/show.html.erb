@@ -8,6 +8,13 @@
   <%= @restaurant.description %>
 </p>
 
+<%= button_to "New", new_restaurant_review_url(@restaurant.id), method: 'get' %>
+
 <p>
-  <%= @reviews %>
+  <% @restaurant.reviews.each do |r| %>
+  <div>
+    <p><%= r.rating %></p>
+    <p><%= r.comment %></p>
+  </div>
+  <% end %>
 </p>
