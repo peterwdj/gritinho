@@ -9,6 +9,8 @@
 </p>
 
 <%= button_to "New", new_restaurant_review_url(@restaurant.id), method: 'get' %>
+<%= button_to "Edit", edit_restaurant_path(@restaurant.id), method: 'get' %>
+<%= button_to "Delete", restaurant_url(@restaurant.id), method: 'delete' %>
 
 <p>
   <% @restaurant.reviews.each do |r| %>
