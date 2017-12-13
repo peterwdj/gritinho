@@ -1,0 +1,16 @@
+example_id                                              | status  | run_time        |
+------------------------------------------------------- | ------- | --------------- |
+./spec/controllers/restaurant_controller_spec.rb[1:1:1] | passed  | 0.08647 seconds |
+./spec/features/homepage_spec.rb[1:1]                   | passed  | 0.17482 seconds |
+./spec/features/homepage_spec.rb[1:2]                   | passed  | 0.01763 seconds |
+./spec/features/homepage_spec.rb[1:3]                   | passed  | 0.00703 seconds |
+./spec/features/homepage_spec.rb[1:4]                   | passed  | 0.04046 seconds |
+./spec/features/new_restaurant_spec.rb[1:1]             | passed  | 0.01904 seconds |
+./spec/features/new_restaurant_spec.rb[1:2]             | passed  | 0.03733 seconds |
+./spec/helpers/restaurant_helper_spec.rb[1:1]           | pending | 0.00001 seconds |
+./spec/helpers/reviews_helper_spec.rb[1:1]              | pending | 0.00001 seconds |
+./spec/models/restaurant_spec.rb[1:1:1]                 | passed  | 0.01093 seconds |
+./spec/models/review_spec.rb[1:1:1]                     | passed  | 0.01591 seconds |
+./spec/models/review_spec.rb[1:1:2]                     | passed  | 0.0022 seconds  |
+./spec/models/user_spec.rb[1:1]                         | pending | 0.00001 seconds |
+./spec/views/restaurant/new.html.erb_spec.rb[1:1]       | pending | 0.00001 seconds |
