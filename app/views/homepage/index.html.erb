@@ -1,6 +1,5 @@
 <h1>GRITINHO</h1>
-<%= button_to "New Restaurant", "restaurants/new", method: :get %>
-
+<%= button_to "New Restaurant", "/restaurants/new", method: :get %>
 <% @restaurants.each do |restaurant| %>
 <%= link_to(restaurant) do %>
   <%= restaurant.name %>

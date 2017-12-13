@@ -1,5 +1,7 @@
 class RestaurantsController < ApplicationController
-  def new
+  before_action :authenticate_user!
+
+  def new	
   end
 
   def create
