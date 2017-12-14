@@ -9,14 +9,21 @@
 </p>
 
 <%= button_to "New", new_restaurant_review_url(@restaurant.id), method: 'get' %>
-<%= button_to "Edit", edit_restaurant_path(@restaurant.id), method: 'get' %>
-<%= button_to "Delete", restaurant_url(@restaurant.id), method: 'delete' %>
+<% if @restaurant.user_id == @current_user %>
+  <%= button_to "Edit", edit_restaurant_path(@restaurant.id), method: 'get' %>
+  <%= button_to "Delete", restaurant_url(@restaurant.id), method: 'delete' %>
+<% end %>
 
 <p>
   <% @restaurant.reviews.each do |r| %>
   <div>
     <p><%= r.rating %></p>
     <p><%= r.comment %></p>
+    <% if r.user_id == @current_user %>
+      <%= button_to "Edit", edit_restaurant_review_path(r.id), method: 'get' %>
+      <%= button_to "Delete", restaurant_review_url(r.id), method: 'delete' %>
+    <% end %>
   </div>
+
   <% end %>
 </p>

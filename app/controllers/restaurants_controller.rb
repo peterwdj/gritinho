@@ -15,6 +15,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @current_user = Thread.current[:user].id
     @reviews = Review.find_by restaurant_id: 1
   end
 

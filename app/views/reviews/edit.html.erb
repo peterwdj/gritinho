@@ -1,5 +1,6 @@
-<h1>Edit Restaurant</h1>
-<%= form_with scope: :review, url: restaurant_reviews_path, local: true do |form| %>
+<h1>Edit Review</h1>
+
+<%= form_with model: @review, url: restaurant_review_url, method: 'put' do |form| %>
   <p>
     <b>Rating</b>
     <%= form.radio_button :rating, 1 %> 1
@@ -8,12 +9,10 @@
     <%= form.radio_button :rating, 4 %> 4
     <%= form.radio_button :rating, 5 %> 5
   </p>
-
   <p>
     <%= form.label :comment %><br>
     <%= form.text_area :comment %>
   </p>
-
   <p>
     <%= form.submit %>
   </p>
