@@ -1,0 +1,22 @@
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @restaurant.description %>
+</p>
+
+<%= button_to "New", new_restaurant_review_url(@restaurant.id), method: 'get' %>
+<%= button_to "Edit", edit_restaurant_path(@restaurant.id), method: 'get' %>
+<%= button_to "Delete", restaurant_url(@restaurant.id), method: 'delete' %>
+
+<p>
+  <% @restaurant.reviews.each do |r| %>
+  <div>
+    <p><%= r.rating %></p>
+    <p><%= r.comment %></p>
+  </div>
+  <% end %>
+</p>
