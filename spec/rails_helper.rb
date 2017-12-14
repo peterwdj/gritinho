@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'devise'
 require 'support/controller_macros'
 require 'factory_bot_rails'
+require 'omniauth'
 
 ActiveRecord::Migration.maintain_test_schema!
 
