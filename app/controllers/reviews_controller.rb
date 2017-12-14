@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    rev = Review.create(review_params_hash)
+    Review.create(review_params_hash)
     redirect_to Restaurant.find(params[:restaurant_id])
   end
 
@@ -12,18 +12,20 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @current_user = Thread.current[:user].id
+    p "Lalalalalala"
+    p params
     @review = Review.find(params[:id])
   end
 
   def destroy
-    Review.find(params[:id]).destroy
-    redirect_to Restaurant.find(params[:restaurant_id])
+    review = Review.find(params[:id])
+    review.destroy if review.user_id == Thread.current[:user].id
+    redirect_to '/'
   end
 
   def update
     @review = Review.find(params[:id])
-    # p "LALAALALALALSSDAKASDL"
-    # p @review.update(review_params_hash)
     if @review.update(review_params_hash)
       redirect_to Restaurant.find(params[:restaurant_id])
     else

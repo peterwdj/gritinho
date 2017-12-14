@@ -1,19 +1,23 @@
 <h1>Edit Review</h1>
 
-<%= form_with model: @review, url: restaurant_review_url, method: 'put' do |form| %>
-  <p>
-    <b>Rating</b>
-    <%= form.radio_button :rating, 1 %> 1
-    <%= form.radio_button :rating, 2 %> 2
-    <%= form.radio_button :rating, 3 %> 3
-    <%= form.radio_button :rating, 4 %> 4
-    <%= form.radio_button :rating, 5 %> 5
-  </p>
-  <p>
-    <%= form.label :comment %><br>
-    <%= form.text_area :comment %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+<% if @review.user_id == @current_user %>
+  <%= form_with model: @review, url: restaurant_review_url, method: 'put' do |form| %>
+    <p>
+      <b>Rating</b>
+      <%= form.radio_button :rating, 1 %> 1
+      <%= form.radio_button :rating, 2 %> 2
+      <%= form.radio_button :rating, 3 %> 3
+      <%= form.radio_button :rating, 4 %> 4
+      <%= form.radio_button :rating, 5 %> 5
+    </p>
+    <p>
+      <%= form.label :comment %><br>
+      <%= form.text_area :comment %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+<% else %>
+  "NO!"
 <% end %>

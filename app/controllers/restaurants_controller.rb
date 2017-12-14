@@ -5,7 +5,8 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    @restaurant = Restaurant.find(params[:id])
+    a = @restaurant = Restaurant.find(params[:id])
+    b = @current_user = Thread.current[:user].id
   end
 
   def create
@@ -20,7 +21,8 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
-    Restaurant.find(params[:id]).destroy
+    restaurant = Restaurant.find(params[:id])
+    restaurant.destroy if restaurant.user_id == Thread.current[:user].id
     redirect_to '/'
   end
 
