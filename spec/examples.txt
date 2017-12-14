@@ -7,6 +7,7 @@ example_id                                              | status  | run_time    
 ./spec/features/homepage_spec.rb[1:4]                   | passed  | 0.04046 seconds |
 ./spec/features/new_restaurant_spec.rb[1:1]             | passed  | 0.01904 seconds |
 ./spec/features/new_restaurant_spec.rb[1:2]             | passed  | 0.03733 seconds |
+./spec/helpers/omniauth_callbacks_helper_spec.rb[1:1]   | unknown |                 |
 ./spec/helpers/restaurant_helper_spec.rb[1:1]           | pending | 0.00001 seconds |
 ./spec/helpers/reviews_helper_spec.rb[1:1]              | pending | 0.00001 seconds |
 ./spec/models/restaurant_spec.rb[1:1:1]                 | passed  | 0.01093 seconds |

@@ -22,6 +22,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+# PJ Use Omniauth Gem to allow for OAuth sign-in
+gem 'omniauth-google-oauth2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -39,6 +41,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  # PJ Uses dotenv Gem to configure environments
+  gem 'dotenv-rails'
   gem 'database_cleaner'
   # PJ: Use factory_bot to allow signed-in status in test
   gem 'factory_bot_rails'
