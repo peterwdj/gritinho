@@ -20,8 +20,8 @@
     <p><%= r.rating %></p>
     <p><%= r.comment %></p>
     <% if r.user_id == @current_user %>
-      <%= button_to "Edit", edit_restaurant_review_path(r.id), method: 'get' %>
-      <%= button_to "Delete", restaurant_review_url(r.id), method: 'delete' %>
+      <%= button_to "Edit", edit_restaurant_review_path(@restaurant.id, r.id), method: 'get' %>
+      <%= button_to "Delete", restaurant_review_url(@restaurant.id, r.id), method: 'delete' %>
     <% end %>
   </div>
 

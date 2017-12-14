@@ -12,16 +12,14 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @current_user = Thread.current[:user].id
-    p "Lalalalalala"
-    p params
+    @current_user = current_user.id
     @review = Review.find(params[:id])
   end
 
   def destroy
     review = Review.find(params[:id])
-    review.destroy if review.user_id == Thread.current[:user].id
-    redirect_to '/'
+    review.destroy if review.user_id == current_user.id
+    redirect_to Restaurant.find(params[:restaurant_id])
   end
 
   def update
@@ -40,6 +38,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params_hash
-    { rating: params[:review][:rating], comment: params[:review][:comment], user_id: Thread.current[:user].id, restaurant_id: params[:restaurant_id] }
+    { rating: params[:review][:rating], comment: params[:review][:comment], user_id: current_user.id, restaurant_id: params[:restaurant_id] }
   end
 end

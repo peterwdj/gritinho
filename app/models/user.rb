@@ -5,13 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :restaurants
   has_many :reviews
-
-  def self.current
-   Thread.current[:user]
-  end
-
-  def self.current=(user)
-   Thread.current[:user] = user
-  end
-  
 end
