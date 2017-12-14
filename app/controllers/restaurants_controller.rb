@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
   before_action :authenticate_user!
 
-  def new	
+  def new
   end
 
   def edit
@@ -36,11 +36,10 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params_hash
-    { name: params[:name], description: params[:description] }
+    { name: params[:name], description: params[:description], user_id: Thread.current[:user].id  }
   end
 
   def restaurant_params
     params.require(:restaurant).permit(:name, :description)
   end
 end
-
