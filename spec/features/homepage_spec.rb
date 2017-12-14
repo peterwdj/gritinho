@@ -19,6 +19,8 @@ RSpec.feature "home page", :type => :feature do
   end
 
   scenario "Clicking New Restaurant button takes the user to a page allowing them to add a new restaurant" do
+    user = FactoryBot.create(:user)
+    login_as(user, :scope => :user)
     visit "/"
     click_button "New Restaurant"
     expect(page).to have_content "Create New Restaurant"

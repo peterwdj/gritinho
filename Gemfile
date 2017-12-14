@@ -40,6 +40,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'database_cleaner'
+  # PJ: Use factory_bot to allow signed-in status in test
+  gem 'factory_bot_rails'
   gem 'selenium-webdriver'
   # TBW: Use RSpec as testing framework
   gem 'rspec-rails'
